@@ -4,7 +4,7 @@ const bodyparser = require('body-parser')
 
 const myUser = {
   email: "juliangomez1@gmail.com",
-  password: "123456789"
+  password: "123"
 }
 
 const app =express()
