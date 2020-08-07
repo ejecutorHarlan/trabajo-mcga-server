@@ -4,7 +4,7 @@ const bodyparser = require('body-parser')
 
 const myUser = {
   email: "juliangomez1@gmail.com",
-  password: "123"
+  password: "123456789"
 }
 
 const app =express()
@@ -33,21 +33,21 @@ app.post("/login", (req, res) => {
   //modficacion para mostrar si el error es el user o el password
   //no aplicable en produccion
 
-      if( req.body.email !== myUser.email  )
-      {
-        return res.status(401).send ({
-          success: false,
-          message: "User not exist",
-        })
-      }
+  if( req.body.email !== myUser.email  )
+  {
+    return res.status(401).send ({
+      success: false,
+      message: "User not exist",
+    })
+  }
 
-        if( req.body.password !== myUser.password    )
-        {
-        return res.status(401).send ({
-          success: false,
-          message: "wrong password  ",
-        })
-      }
+    if( req.body.password !== myUser.password    )
+    {
+    return res.status(401).send ({
+      success: false,
+      message: "wrong password  ",
+    })
+  }
 
 
 
